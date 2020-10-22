@@ -242,11 +242,11 @@ def del_sc1():
 def err_screen():
     global sc1
     sc1 = tk.Tk()
-    sc1.geometry('300x100')
+    sc1.geometry('400x100')
     sc1.iconbitmap('AMS.ico')
     sc1.title('Warning!!')
-    sc1.configure(background='black')
-    Label(sc1,text='Enrollment & Name required!!!',fg='grey',bg='white',font=('Opensans', 16, ' bold ')).pack()
+    sc1.configure(background='white')
+    Label(sc1,text='Enrollment & Name required!!!',fg='black',bg='white',font=('Opensans', 16, ' bold ')).pack()
     Button(sc1,text='OK',command=del_sc1,fg="black"  ,bg="white"  ,width=9  ,height=1, activebackground = "Red" ,font=('Opensans', 15, ' bold ')).place(x=90,y= 50)
 
 ##Error screen2
@@ -306,7 +306,7 @@ def take_img():
                 writer.writerow(row)
                 csvFile.close()
             res = "Images Saved for Enrollment : " + Enrollment + " Name : " + Name
-            Notification.configure(text=res, bg="white", width=50, font=('Opensans', 18, 'bold'))
+            Notification.configure(text=res, bg="white", width=40, font=('Opensans', 18, 'bold'))
             Notification.place(x=250, y=400)
         except FileExistsError as F:
             f = 'Student Data already exists'
@@ -459,7 +459,7 @@ def subjectchoose():
 
     def Attf():
         import subprocess
-        subprocess.Popen(r'explorer /select,"D:\Attendace_management_system-master\Attendance\-------Check atttendance-------"')
+        subprocess.Popen(r'explorer /select,"D:/Attendace_management_system-master/Attendance/-------Check atttendance-------"')
 
     attf = tk.Button(windo,  text="Check Sheets",command=Attf,fg="black"  ,bg="white"  ,width=12  ,height=1 ,activebackground = "Red" ,font=('Opensans', 14, ' bold '))
     attf.place(x=430, y=255)
@@ -582,7 +582,7 @@ def trainimg():
         Notification.place(x=350, y=400)
 
     res = "Model Trained"  # +",".join(str(f) for f in Id)
-    Notification.configure(text=res, bg="white", width=50, font=('Opensans', 18, 'bold'))
+    Notification.configure(text=res, bg="white", width=40, font=('Opensans', 18, 'bold'))
     Notification.place(x=250, y=400)
 
 def getImagesAndLabels(path):
